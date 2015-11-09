@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+    <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+
+    <link rel="stylesheet" href="{{ "/css/landing.css" | prepend: site.baseurl }}">
+    <link rel="stylesheet" href="{{ "/css/custombootstrap.css" | prepend: site.baseurl }}">
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+    <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
+    <link href='https://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
+    <style>
+      * { margin: 0; padding: 0; }
+      body{
+        background: url({{ site.url }}/assets/img/bg.jpg) no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        height: 100vh;
+      }
+      body.bg1 {
+
+      }
+
+      body.bg2 {
+
+      }
+
+      h1, h2 {
+        color: #fdf7ed;
+        font-weight: 300;
+        font-style: normal;
+        font-family: 'Lato', sans-serif;
+        letter-spacing: .19em;
+        text-align: center;
+        text-transform: uppercase;
+        text-rendering: optimizeLegibility;
+      }
+      h1 {
+        font-size: 62px;
+        line-height: .9em;
+      }
+
+      h2 {
+        font-size: 2em;
+      }
+      .actions {
+        width: 300px;
+        margin: 50px auto;
+      }
+    .btn-transparent {
+      color: white;
+      background-color: transparent;
+      border: 1px solid;
+      border-color: white;
+      padding: 12px 24px;
+      font-size: 24px;
+      border-radius: 0px;
+    }
+    .btn-transparent:hover {
+      background-color: white;
+      border-color: white;
+      color: #333333;
+    }
+    </style>
+  </head>
+  <body>
+    {{ content }}
+  </body>
+</html>

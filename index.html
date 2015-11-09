@@ -1,0 +1,15 @@
+---
+layout: landing
+---
+
+<h1 class="page-title">{{site.title}}</h1>
+
+<h2 class="page-subtitle">{{site.subtitle}}</h2>
+
+<div class="actions">
+  <div class="btn-group btn-group-justified" role="group" aria-label="...">
+    {% for button in site.landing %}
+      <a class="btn btn-transparent" href="{{ button.url | prepend: site.baseurl }}">{{ button.name }}</a>
+    {% endfor %}
+  </div>
+</div>
