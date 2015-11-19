@@ -9,68 +9,57 @@
     <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
     <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
 
-    <link rel="stylesheet" href="{{ "/css/landing.css" | prepend: site.baseurl }}">
     <link rel="stylesheet" href="{{ "/css/custombootstrap.css" | prepend: site.baseurl }}">
+    <link rel="stylesheet" href="{{ "/css/landing.css" | prepend: site.baseurl  }}">
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
     <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
     <link href='https://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
     <style>
       * { margin: 0; padding: 0; }
-      body{
-        background: url({{ site.url }}/assets/img/bg.jpg) no-repeat center center fixed;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
+      .container {
         height: 100vh;
-      }
-      body.bg1 {
-
-      }
-
-      body.bg2 {
-
-      }
-
-      h1, h2 {
-        color: #fdf7ed;
-        font-weight: 300;
-        font-style: normal;
-        font-family: 'Lato', sans-serif;
-        letter-spacing: .19em;
-        text-align: center;
-        text-transform: uppercase;
-        text-rendering: optimizeLegibility;
-      }
-      h1 {
-        font-size: 62px;
-        line-height: .9em;
+        display: flex;
+        align-items: center;
+        background-size: cover;
+      	background-blend-mode: darken;
+      	transition: 3s;
+      	background: url({{ site.baseurl }}/assets/img/bg.jpg) no-repeat center center fixed;
       }
 
-      h2 {
-        font-size: 2em;
-      }
-      .actions {
-        width: 300px;
-        margin: 50px auto;
-      }
-    .btn-transparent {
-      color: white;
-      background-color: transparent;
-      border: 1px solid;
-      border-color: white;
-      padding: 12px 24px;
-      font-size: 24px;
-      border-radius: 0px;
-    }
-    .btn-transparent:hover {
-      background-color: white;
-      border-color: white;
-      color: #333333;
-    }
     </style>
   </head>
   <body>
-    {{ content }}
+    <div class="container">
+      <div class="content">
+        {{ content }}
+      </div>
+    </div>
   </body>
+  <script>
+    var container = document.getElementsByClassName('container')[0];
+    var bgImageArray = ["bg.jpg?1", "bg1.jpg?1", "bg2.jpg?1"],
+        base = "{{ site.baseurl }}/assets/img/",
+        secs = 6;
+
+    bgImageArray.forEach(function(img){new Image().src = base + img;});
+
+    function backgroundSequence() {
+      window.clearTimeout();
+      var k = 0;
+      for (var i = 0; i < bgImageArray.length; i++) {
+        setTimeout(function(){
+          container.style.background = "url(" + base + bgImageArray[k] + ") no-repeat center center fixed";
+          container.style.backgroundSize ="cover";
+
+          if ((k + 1) === bgImageArray.length) {
+            setTimeout(function() {backgroundSequence() }, (secs * 1000))
+          } else {
+            k++;
+          }
+
+        }, (secs * 1000) * i)
+      }
+    }
+    backgroundSequence();
+  </script>
 </html>

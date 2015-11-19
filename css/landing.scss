@@ -27,7 +27,49 @@ $on-palm:          600px;
 $on-laptop:        800px;
 
 @mixin media-query($device) {
-    @media screen and (max-width: $device) {
-        @content;
-    }
+  @media screen and (max-width: $device) {
+    @content;
+  }
+}
+
+.content {
+  margin: auto;
+}
+
+h1, h2 {
+  /*color: #797267;*/
+  color: white;
+  font-weight: bold;
+  font-style: normal;
+  font-family: 'Lato', sans-serif;
+  letter-spacing: .19em;
+  text-align: center;
+  text-transform: uppercase;
+  text-rendering: optimizeLegibility;
+}
+h1 {
+  font-size: 62px;
+  line-height: .9em;
+}
+
+h2 {
+  font-size: 2em;
+}
+.actions {
+  width: 300px;
+  margin: 50px auto;
+}
+.btn-transparent {
+  color: white;
+  background-color: transparent;
+  border: 1px solid;
+  border-color: white;
+  padding: 12px 24px;
+  font-size: 24px;
+  border-radius: 0px;
+}
+.btn-transparent:hover {
+  background-color: white;
+  border-color: white;
+  color: #333333;
 }
