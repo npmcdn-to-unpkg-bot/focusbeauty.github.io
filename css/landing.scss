@@ -31,7 +31,6 @@ $on-laptop:        800px;
     @content;
   }
 }
-
 .content {
   margin: auto;
 }
@@ -55,10 +54,11 @@ h1 {
 h2 {
   font-size: 2em;
 }
+
 .actions {
-  width: 300px;
   margin: 50px auto;
 }
+
 .btn-transparent {
   color: white;
   background-color: transparent;
