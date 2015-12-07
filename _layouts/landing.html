@@ -25,6 +25,12 @@
       	background: url({{ 'assets/landing/background/IMG_5721.jpg' | prepend: site.baseurl }}) 50% 50% / cover no-repeat fixed;
         background-color: rgba(0, 0, 0, 0.4);
       }
+      .caption {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        color: #DCDCDC;
+      }
 
     </style>
   </head>
@@ -53,8 +59,10 @@
         <div class="actions">
           <h3>{{ site.phone }}</h3>
         </div>
+        <span class="caption">Photo Credit: Andrea Ware</span>
       </div>
     </div>
+
   </body>
 
   <script>
