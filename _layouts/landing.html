@@ -9,10 +9,10 @@
     <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
     <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
 
-    <link rel="stylesheet" href="{{ "/css/landing.css" | prepend: site.baseurl  }}">
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
     <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
     <link href='https://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{{ "/css/landing.css" | prepend: site.baseurl  }}">
     <style>
       * { margin: 0; padding: 0; }
       .container {
@@ -21,8 +21,8 @@
         align-items: center;
         background-size: cover;
       	background-blend-mode: darken;
-      	transition: 3s;
-      	background: url({{ site.baseurl }}/assets/img/bg.jpg) no-repeat center center fixed;
+      	transition: background 3s;
+      	background: url({{ site.baseurl }}/assets/landing/background/IMG_5721.jpg) no-repeat center center fixed;
       }
 
     </style>
@@ -32,7 +32,7 @@
       <div class="content">
         <h1 class="page-title">{{site.title}}</h1>
         <h2 class="page-subtitle">{{site.subtitle}}</h2>
-        
+
         <div class="hidden-xs-down">
           <div class="actions" style="width: {{ site.landing.size | times: 150 | plus: 100 }}px">
             <div class="btn-group btn-group-justified" role="group" aria-label="...">
