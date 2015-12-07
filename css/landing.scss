@@ -39,7 +39,7 @@ $on-laptop:        800px;
   margin: auto;
 }
 
-h1, h2 {
+h1, h2, h3, h4, h5 {
   /*color: #797267;*/
   color: white;
   font-weight: bold;
@@ -50,12 +50,17 @@ h1, h2 {
   text-transform: uppercase;
   text-rendering: optimizeLegibility;
 }
+
 h1 {
   font-size: 62px;
   line-height: .9em;
 }
 
 h2 {
+  font-size: 2em;
+}
+
+h3 {
   font-size: 2em;
 }
 

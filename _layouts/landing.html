@@ -12,7 +12,7 @@
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
     <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
     <link href='https://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="{{ "/css/landing.css" | prepend: site.baseurl  }}">
+    <link rel="stylesheet" href="{{ "css/landing.css" | prepend: site.baseurl  }}">
     <style>
       * { margin: 0; padding: 0; }
       .container {
@@ -22,7 +22,8 @@
         background-size: cover;
       	background-blend-mode: darken;
       	transition: background 3s;
-      	background: url({{ site.baseurl }}/assets/landing/background/IMG_5721.jpg) no-repeat center center fixed;
+      	background: url({{ 'assets/landing/background/IMG_5721.jpg' | prepend: site.baseurl }}) 50% 50% / cover no-repeat fixed;
+        background-color: rgba(0, 0, 0, 0.4);
       }
 
     </style>
@@ -35,7 +36,7 @@
 
         <div class="hidden-xs-down">
           <div class="actions" style="width: {{ site.landing.size | times: 150 | plus: 100 }}px">
-            <div class="btn-group btn-group-justified" role="group" aria-label="...">
+            <div class="btn-group btn-group-justified" role="group" aria-label="menu">
               {% include landing_buttons.html %}
             </div>
           </div>
@@ -49,6 +50,9 @@
           </div>
         </div>
 
+        <div class="actions">
+          <h3>{{ site.phone }}</h3>
+        </div>
       </div>
     </div>
   </body>
@@ -58,7 +62,7 @@
     var bgImageArray = [
       {% for bg in site.static_files %}
         {% if bg.path contains 'landing/background' %}
-          '{{ site.baseurl }}{{ bg.path }}?{{bg.modified_time | date: "%Y-%m-%d-%H-%M-%S"}}',
+          '{{ bg.path }}?{{bg.modified_time | date: "%Y-%m-%d-%H-%M-%S"}}',
         {% endif %}
       {% endfor %}
       ],
@@ -66,13 +70,14 @@
 
     bgImageArray.forEach(function(img){new Image().src = img;});
 
-    function backgroundSequence() {
+    (function backgroundSequence() {
       window.clearTimeout();
       var k = 0;
       for (var i = 0; i < bgImageArray.length; i++) {
         setTimeout(function(){
           container.style.background = "url(" + bgImageArray[k] + ") no-repeat center center fixed";
           container.style.backgroundSize ="cover";
+          container.style.backgroundcolor = 'rgba(0,0,0,0.4)';
 
           if ((k + 1) === bgImageArray.length) {
             setTimeout(function() {backgroundSequence() }, (secs * 1000))
@@ -82,10 +87,8 @@
 
         }, (secs * 1000) * i)
       }
-    }
-    backgroundSequence();
+    })
   </script>
-  <script src="{{ "/assets/landing/index.js" | prepend: site.baseurl  }}"></script>
   {% include google_analytics.html %}
 
 </html>

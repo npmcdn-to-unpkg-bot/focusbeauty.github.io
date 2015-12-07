@@ -1,5 +1,5 @@
 {% for button in site.landing %}
-  <a class="btn btn-transparent" href="{{ button.url | prepend: site.baseurl }}">{{ button.name }}</a>
+  <a class="btn btn-transparent" href="{{ button.url  }}">{{ button.name }}</a>
 {% endfor %}
 {% for post in site.posts limit:1 %}
   <a class="btn btn-transparent" href="{{ '/blog' | prepend: site.baseurl }}">Blog</a>

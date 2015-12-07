@@ -12,16 +12,18 @@
 # Site settings
 title: "Focus Beauty"
 subtitle: "Professional Eyelash Extensions"
-email: your-email@domain.com
-description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-# baseurl: "/" # the subpath of your site, e.g. /blog
+phone: '425.555.1212'
+email: 'focusbeauty@gmail.com'
+description: > #
+  Professional eyelashes. Serving as far North East as Bothell, and South West
+  as Vashon Island.
+baseurl: "/" # the subpath of your site, e.g. /blog
 url: "http://focusbeauty.github.io/" # the base hostname & protocol for your site
 google_analytics: 'UA-61052500-1'
-twitter_username: focusbeauty
-github_username:  focusbeauty
+twitter: focusbeauty
+instagram: focusbeauty
+facebook: focusbeauty
+github:  focusbeauty
 
 sass:
   sass_dir: _sass
@@ -33,4 +35,4 @@ markdown: kramdown
 collections:
   landing:
     output: true
-    permalink: /awesome/:path/
+    permalink: /lashes/:path/
