@@ -25,6 +25,9 @@ instagram: focusbeauty
 facebook: focusbeauty
 github:  focusbeauty
 
+prose:
+  siteurl: 'http://focusbeauty.github.io'
+
 sass:
   sass_dir: _sass
   style: compressed
