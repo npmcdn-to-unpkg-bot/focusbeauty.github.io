@@ -1,7 +1,3 @@
----
-# Only the main Sass file needs front matter (the dashes are enough)
----
-@charset "utf-8";
 @import "custom_landing_bootstrap.scss";
 @import 'bootstrap4/mixins';
 @import 'bootstrap4/variables.scss';
@@ -77,8 +73,31 @@ h3 {
   font-size: 24px;
   border-radius: 0px;
 }
+
 .btn-transparent:hover {
   background-color: white;
   border-color: white;
   color: #333333;
+}
+
+* {
+  margin: 0; padding: 0;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  background-size: cover;
+  background-blend-mode: darken;
+  transition: background 3s;
+  background: url({{ 'assets/landing/background/focus-beauty-andrea-ware.jpg' | prepend: site.baseurl }}) 50% 50% / cover no-repeat fixed;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.caption {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  color: #DCDCDC;
 }
