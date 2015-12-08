@@ -14,6 +14,12 @@ layout: null
 
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
     <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
+    <style type="text/css">
+      {% capture include_to_scssify %}
+        {% include landing.scss %}
+      {% endcapture %}
+      {{ include_to_scssify | scssify }}
+    </style>
   </head>
   <body>
     <div class="container">
@@ -45,12 +51,6 @@ layout: null
     </div>
 
   </body>
-  <style type="text/css">
-    {% capture include_to_scssify %}
-      {% include landing.scss %}
-    {% endcapture %}
-    {{ include_to_scssify | scssify }}
-  </style>
   <script>
     {% include landing.js %}
   </script>
