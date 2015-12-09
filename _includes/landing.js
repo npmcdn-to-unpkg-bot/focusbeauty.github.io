@@ -11,7 +11,7 @@ bgImageArray.forEach(function(img){new Image().src = img;});
   var k = 0;
   for (var i = 0; i < bgImageArray.length; i++) {
     setTimeout(function(){
-      container.style.background = "url(" + bgImageArray[k] + ") no-repeat center center fixed";
+      container.style.background = "url(" + bgImageArray[k] + ") 50% 50% / cover no-repeat fixed";
       container.style.backgroundSize ="cover";
       container.style.backgroundcolor = 'rgba(0,0,0,0.4)';
 
@@ -23,4 +23,4 @@ bgImageArray.forEach(function(img){new Image().src = img;});
 
     }, (secs * 1000) * i)
   }
-})
+})()

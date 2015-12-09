@@ -7,35 +7,25 @@ name: "Enter"
 
 <p>Focus Beauty, offering mobile eyelash extensions in the greater seattle area.</p>
 
-<table>
-  <tbody>
-    <tr>
-      <td>Eyelash Extensions</td>
-      <td>Price</td>
-    </tr>
-  </tbody>
-  <tfoot>
-    <tr>
-      <td>Full Set of Eyelash Extensions</td>
-      <td>$150</td>
-    </tr>
-    <tr>
-      <td>30-minute fill</td>
-      <td>$50</td>
-    </tr>
-    <tr>
-      <td>60-minute fill</td>
-      <td>$80</td>
-    </tr>
-    <tr>
-      <td>90-minute fill</td>
-      <td>$110</td>
-    </tr>
-    <tr>
-      <td>Volume Full Set</td>
-      <td>$250</td>
-    </tr>
-  </tfoot>
-</table>
-
-<a href="/booking">Booking</a>
+{% for service in site.data.services %}
+  <table>
+    <colgroup>
+      <col span="1" style="width: 80%;">
+      <col span="1" style="width: 20%;">
+   </colgroup>
+    <tbody>
+      <tr>
+        <td><strong>{{ service["title"] }}</strong></td>
+        <td>Price</td>
+      </tr>
+    </tbody>
+    <tfoot>
+    {% for price in service["data"] %}
+        <tr>
+          <td>{{price["title"]}}</td>
+          <td>{{price["value"]}}</td>
+        </tr>
+    {% endfor %}
+    </tfoot>
+  </table>
+{% endfor %}

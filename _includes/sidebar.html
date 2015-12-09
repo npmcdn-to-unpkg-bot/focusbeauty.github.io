@@ -8,6 +8,7 @@
     </div>
 
     <nav class="sidebar-nav">
+      {% if site.phone != nil %}<a class="sidebar-nav-item" href="tel:{{ site.phone }}">{{site.phone}}</a>{% endif %}
       {% comment %}
         The code below dynamically generates a sidebar nav of pages with
         `layout: page` in the front-matter. See readme for usage.
@@ -23,7 +24,6 @@
       {% if site.twitter != nil %}<a class="sidebar-nav-item" href="{{ site.twitter }}">Twitter</a>{% endif %}
     </nav>
 
-    <p>&copy; {{ site.time | date: '%Y' }}. All rights reserved.</p>
-    <a href="http://www.blairanderson.co/">made by blair</a>
+    <a href="http://www.blairanderson.co/" style="position: fixed;bottom: 0;">made by blair</a>
   </div>
 </div>

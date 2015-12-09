@@ -32,6 +32,13 @@ $on-laptop:        800px;
     @content;
   }
 }
+
+body {
+  opacity: 0;
+  transition: opacity .6s;
+  -webkit-transition: opacity .6s;
+}
+
 .content {
   margin: auto;
 }
@@ -91,9 +98,8 @@ h3 {
   align-items: center;
   background-size: cover;
   background-blend-mode: darken;
-  transition: background 3s;
-  background: url({{ 'assets/landing/background/focus-beauty-andrea-ware.jpg' | prepend: site.baseurl }}) 50% 50% / cover no-repeat fixed;
-  background-color: rgba(0, 0, 0, 0.4);
+  background: url('/') 50% 50% / cover no-repeat fixed;
+  background-color: rgba(0, 0, 0, 0.4) !important;
 }
 
 .caption {
