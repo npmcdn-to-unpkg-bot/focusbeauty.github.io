@@ -4,7 +4,10 @@
       <h1>
         <a href="/">{{ site.title }}</a>
       </h1>
+      {% assign regions = site.data.locations['regions'] %}
       <p class="lead">{{ site.description }}</p>
+      <p>Serving {{ regions | join: ', ' }}.</p>
+
     </div>
 
     <nav class="sidebar-nav">

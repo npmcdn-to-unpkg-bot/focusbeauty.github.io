@@ -56,6 +56,20 @@ html {
 .text-color-white h2 {color: #fff;}
 
 .footer {
+  text-align: center;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+}
+
+.footer-sticky {
+  max-width: 37rem;
+}
+
+@media (min-width: 48em) {
+  .footer-sticky {
+    margin-left: 22rem;
+    margin-right: 12rem;
+  }
 }
 
 /*
