@@ -111,12 +111,25 @@ html {
 
 /* Sidebar nav */
 .sidebar-nav {
-  margin-bottom: 1rem;
+  margin-bottom: 0rem;
 }
+
+
 .sidebar-nav-item {
   display: block;
-  line-height: 1.75;
+  line-height: 50px;
+  height: 50px;
+  font-size: 25px;
 }
+
+@media (min-width: 48em) {
+  .sidebar-nav-item {
+    line-height: 1.5rem;
+    height: 1.5rem;
+    font-size: 18px;
+  }
+}
+
 a.sidebar-nav-item:hover,
 a.sidebar-nav-item:focus {
   text-decoration: underline;
