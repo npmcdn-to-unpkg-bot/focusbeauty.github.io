@@ -1,0 +1,57 @@
+require 'rake'
+require 'net/http'
+require 'json'
+
+class Hash
+  def except(*keys)
+    dup.except!(*keys)
+  end
+
+  def except!(*keys)
+    keys.each { |key| delete(key) }
+    self
+  end
+end
+
+desc "fetch locations"
+task :locations do
+  Net::HTTP.start("gridspree.io") do |http|
+    resp = http.get("/ss/xGmQC6u2zWpV7hWos38N9G")
+    data_hash = JSON.parse(resp.body)
+
+    open("_data/locations.json", "w") { |file| file.write(resp.body) }
+  end
+end
+
+
+
+
+desc "fetch prices"
+task :services do
+  services = []
+  Net::HTTP.start("gridspree.io") do |http|
+    resp = http.get("ss/3NSTm6bvRoHS4k76ZXqWv")
+    data_hash = JSON.parse(resp.body)
+
+    grouped = data_hash["rows"].group_by { |row| row["table"] }.values
+    data = []
+    grouped = grouped.map do |rows|
+      table = {}
+
+      rows.each_with_index do |row, index|
+        if index == 0
+          table["title"] = row["title"]
+        else
+          table["data"] ||= []
+          table["data"] << row.except("table")
+        end
+      end
+
+      data << table
+    end
+
+
+    open("_data/services.json", "w") { |file| file.write(JSON.pretty_generate(data)) }
+  end
+
+end

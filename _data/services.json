@@ -1,20 +1,82 @@
 [
   {
-    "title": "Focus Beauty Eyelash Extensions",
+    "title": "Classic Extensions",
     "data": [
-      {"title": "Full Set", "value": "$150"},
-      {"title": "90-minute touch up", "value": "$110"},
-      {"title": "60-minute touch up", "value": "$80"},
-      {"title": "30-minute touch up", "value": "$50"},
+      {
+        "title": "Classic Full Set",
+        "value": "$150.00"
+      },
+      {
+        "title": "Mini Fill",
+        "value": "$45.00"
+      },
+      {
+        "title": "Regular Fill",
+        "value": "$60.00"
+      },
+      {
+        "title": "Extended Fill",
+        "value": "$75.00"
+      }
     ]
   },
   {
-    "title": "Volume Lash Extensions",
+    "title": "Mink Extensions",
     "data": [
-      {"title": "Full Set", "value": "$250"},
-      {"title": "90-minute touch up", "value": "$210"},
-      {"title": "60-minute touch up", "value": "$180"},
-      {"title": "30-minute touch up", "value": "$150"},
+      {
+        "title": "Mink Full Set",
+        "value": "$160.00"
+      },
+      {
+        "title": "Mini Fill",
+        "value": "$55.00"
+      },
+      {
+        "title": "Regular Fill",
+        "value": "$70.00"
+      },
+      {
+        "title": "Extended Fill",
+        "value": "$85.00"
+      }
+    ]
+  },
+  {
+    "title": "Volume Extensions",
+    "data": [
+      {
+        "title": "Volume Full Set",
+        "value": "$200.00"
+      },
+      {
+        "title": "Mini Fill",
+        "value": "$95.00"
+      },
+      {
+        "title": "Regular Fill",
+        "value": "$110.00"
+      },
+      {
+        "title": "Extended Fill",
+        "value": "$125.00"
+      }
+    ]
+  },
+  {
+    "title": "Special Requests",
+    "data": [
+      {
+        "title": "Colored lash",
+        "value": "$25 extra"
+      },
+      {
+        "title": "lash bling",
+        "value": "$25 extra"
+      },
+      {
+        "title": "lash removal",
+        "value": "$35"
+      }
     ]
   }
 ]
