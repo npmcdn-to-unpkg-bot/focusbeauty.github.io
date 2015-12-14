@@ -13,18 +13,26 @@ class Hash
   end
 end
 
+module Enumerable
+  def pluck(key)
+    map {|obj| obj[key] }
+  end
+end
+
+
 desc "fetch locations"
 task :locations do
   Net::HTTP.start("gridspree.io") do |http|
     resp = http.get("/ss/xGmQC6u2zWpV7hWos38N9G")
     data_hash = JSON.parse(resp.body)
 
-    open("_data/locations.json", "w") { |file| file.write(resp.body) }
+    regions = data_hash["rows"].pluck('region').reject { |c| c.empty? }
+    cities = data_hash["rows"].pluck('city').reject { |c| c.empty? }
+    data = {regions: regions, cities: cities}
+
+    open("_data/locations.json", "w") { |file| file.write(JSON.pretty_generate(data)) }
   end
 end
-
-
-
 
 desc "fetch prices"
 task :services do
