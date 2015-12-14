@@ -135,7 +135,7 @@ a.sidebar-nav-item:focus {
   .sidebar-sticky {
     position: absolute;
     right:  1rem;
-    top:    5rem;
+    top:    4rem;
     left:   1rem;
   }
 }
@@ -148,7 +148,7 @@ a.sidebar-nav-item:focus {
  */
 
 .content {
-  padding-top:    0rem;
+  padding-top:    1rem;
   padding-bottom: 4rem;
 }
 
