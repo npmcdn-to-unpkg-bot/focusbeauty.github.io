@@ -12,12 +12,12 @@
 # Site settings
 title: 'Focus Beauty'
 subtitle: 'Mobile Eyelash Extensions'
-phone: '425.555.1212'
+tagline: 'Mobile Lash Extensions'
+phone: '323.903.7169'
 email: 'focusbeauty@gmail.com'
 description: > #
-  Professional eyelashes. Serving as far North East as Bothell, and South West
-  as Vashon Island.
-baseurl: '' # the subpath of your site, e.g. /blog
+  Mobile Lash Extensions.
+  Serving Kirkland, Bothell, Bellevue, Seattle.
 url: 'http://focusbeauty.github.io' # the base hostname & protocol for your site
 google_analytics: 'UA-61052500-8'
 twitter: focusbeauty

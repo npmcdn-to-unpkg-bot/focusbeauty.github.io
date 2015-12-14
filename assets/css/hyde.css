@@ -46,6 +46,18 @@ html {
 }
 
 
+.background-black {
+  color: rgba(255,255,255,.5);
+  background-color: #202020;
+}
+
+.text-color-white a {color: #fff;}
+.text-color-white h1 {color: #fff;}
+.text-color-white h2 {color: #fff;}
+
+.footer {
+}
+
 /*
  * Sidebar
  *
@@ -56,9 +68,9 @@ html {
 .sidebar {
   text-align: center;
   padding: 2rem 1rem;
-  color: rgba(255,255,255,.5);
-  background-color: #202020;
 }
+
+
 @media (min-width: 48em) {
   .sidebar {
     position: fixed;
