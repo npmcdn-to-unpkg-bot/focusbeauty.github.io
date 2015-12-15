@@ -2,6 +2,17 @@ require 'rake'
 require 'net/http'
 require 'json'
 
+def write_data_to_file(name, data)
+  filename = "_data/#{name}.json"
+  open(filename, "w") { |file| file.write(JSON.pretty_generate(data)) }
+  if data.instance_of?(Array)
+    datatype = 'Array'
+  else
+    datatype = data.keys.map(:to_s).join(", ")
+  end
+  puts "writing #{datatype} to #{filename}"
+end
+
 class Hash
   def except(*keys)
     dup.except!(*keys)
@@ -28,9 +39,24 @@ task :locations do
 
     regions = data_hash["rows"].pluck('region').reject { |c| c.empty? }
     cities = data_hash["rows"].pluck('city').reject { |c| c.empty? }
-    data = {regions: regions, cities: cities}
 
-    open("_data/locations.json", "w") { |file| file.write(JSON.pretty_generate(data)) }
+    write_data_to_file('locations', {regions: regions, cities: cities})
+  end
+end
+
+desc "create product for lash kit"
+task :lashkit do
+  Net::HTTP.start("gridspree.io") do |http|
+    resp = http.get("/ss/kMTtnkLcdPqBUu8oknDTSK")
+    data_hash = JSON.parse(resp.body)
+    data = data_hash["rows"].map do |p|
+      if p["amazon"] && match = p["amazon"].match("([A-Z0-9]{10})")
+        p["asin"] = match[0]
+      end
+      p
+    end
+
+    write_data_to_file('lashkit', data)
   end
 end
 
@@ -58,8 +84,7 @@ task :services do
       data << table
     end
 
-
-    open("_data/services.json", "w") { |file| file.write(JSON.pretty_generate(data)) }
+    write_data_to_file("services", data)
   end
 
 end

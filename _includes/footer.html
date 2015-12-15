@@ -6,6 +6,14 @@
       <small>Serving {{ cities | join: ', ' }}.</small>
       {% if site.phone != nil %}<a class="footer-nav-item" href="tel:{{ site.phone }}">{{site.phone}}</a>{% endif %}
 
+      <p>
+        {% for feature in site.features %}
+          {% if feature.published == true %}
+            <a class="btn btn-link" href="{{ feature.url  }}">{{ feature.title }}</a>
+          {% endif %}
+        {% endfor %}
+      </p>
+
       <p><a href="/">{{site.title}} {{ site.tagline }}</a></p>
     </nav>
   </div>

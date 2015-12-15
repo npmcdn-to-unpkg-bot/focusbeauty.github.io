@@ -38,3 +38,6 @@ collections:
   landing:
     output: true
     permalink: /lashes/:path/
+  features:
+    output: true
+    permalink: /features/:path/
