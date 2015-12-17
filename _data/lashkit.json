@@ -1,192 +1,57 @@
 [
   {
-    "amazon": "craigslist",
-    "date": "11/17/2015",
-    "purchase-type": "one-time",
-    "review": "bed are cool",
-    "rough-amount": "$100.00",
-    "title": "Bed"
-  },
-  {
-    "amazon": "craigslist",
-    "date": "11/17/2015",
-    "purchase-type": "one-time",
-    "review": "lamps are cool",
-    "rough-amount": "$45.00",
-    "title": "Lamp+extra bulb"
-  },
-  {
     "amazon": "http://smile.amazon.com/gp/product/B000MI85FC?psc=1&redirect=true&ref_=oh_aui_detailpage_o07_s00",
     "date": "11/20/2015",
     "purchase-type": "one-time",
+    "qty purchased": 1,
     "review": "",
     "rough-amount": "$7.42",
     "title": "Alcohol Dispenser",
+    "totals": "$7.42",
     "asin": "B000MI85FC"
   },
   {
     "amazon": "http://smile.amazon.com/gp/product/B00GMEXM9Y?psc=1&redirect=true&ref_=oh_aui_detailpage_o07_s00",
     "date": "11/20/2015",
     "purchase-type": "one-time",
+    "qty purchased": 1,
     "review": "",
     "rough-amount": "$18.49",
     "title": "Nebulizer",
+    "totals": "$18.49",
     "asin": "B00GMEXM9Y"
   },
   {
     "amazon": "http://smile.amazon.com/gp/product/B00XWAAFHI?psc=1&redirect=true&ref_=oh_aui_detailpage_o07_s02",
     "date": "11/23/2015",
     "purchase-type": "one-time",
+    "qty purchased": 1,
     "review": "",
     "rough-amount": "$35.97",
     "title": "Mirror",
+    "totals": "$35.97",
     "asin": "B00XWAAFHI"
   },
   {
     "amazon": "http://smile.amazon.com/gp/product/B00MEW8G12?psc=1&redirect=true&ref_=oh_aui_detailpage_o01_s00",
     "date": "12/21/2015",
     "purchase-type": "one-time",
+    "qty purchased": 1,
     "review": "",
     "rough-amount": "$32.92",
     "title": "Chair",
+    "totals": "$32.92",
     "asin": "B00MEW8G12"
   },
   {
     "amazon": "http://smile.amazon.com/gp/product/B00U8GX44A?psc=1&redirect=true&ref_=oh_aui_detailpage_o07_s00",
     "date": "11/23/2015",
     "purchase-type": "one-time",
+    "qty purchased": 1,
     "review": "",
     "rough-amount": "$16.99",
     "title": "Glue Remover",
+    "totals": "$16.99",
     "asin": "B00U8GX44A"
-  },
-  {
-    "amazon": "http://www.amazon.com/Stainless-Precision-Professional-Splinters-Teenagers/dp/B014S5JCHO",
-    "date": "-",
-    "purchase-type": "one-time",
-    "review": "",
-    "rough-amount": "$0.00",
-    "title": "Tweezers",
-    "asin": "B014S5JCHO"
-  },
-  {
-    "amazon": "",
-    "date": "11/16/2015",
-    "purchase-type": "replenishable",
-    "review": "",
-    "rough-amount": "$14.95",
-    "title": "Blink B's Mix .15"
-  },
-  {
-    "amazon": "",
-    "date": "11/13/2015",
-    "purchase-type": "replenishable",
-    "review": "",
-    "rough-amount": "$14.95",
-    "title": "Blink C's Mix .15"
-  },
-  {
-    "amazon": "",
-    "date": "12/31/2015",
-    "purchase-type": "replenishable",
-    "review": "",
-    "rough-amount": "$20.00",
-    "title": "Blink B's .15 11mm"
-  },
-  {
-    "amazon": "",
-    "date": "12/11/2015",
-    "purchase-type": "replenishable",
-    "review": "",
-    "rough-amount": "$16.90",
-    "title": "Blink B's .15 10mm"
-  },
-  {
-    "amazon": "",
-    "date": "11/21/2015",
-    "purchase-type": "replenishable",
-    "review": "",
-    "rough-amount": "$18.00",
-    "title": "Blink C's .07 10mm"
-  },
-  {
-    "amazon": "",
-    "date": "11/21/2015",
-    "purchase-type": "replenishable",
-    "review": "",
-    "rough-amount": "$20.00",
-    "title": "Blink C's .07 9mm"
-  },
-  {
-    "amazon": "",
-    "date": "11/13/2015",
-    "purchase-type": "replenishable",
-    "review": "",
-    "rough-amount": "$17.99",
-    "title": "Eye Pads (10 pairs)"
-  },
-  {
-    "amazon": "",
-    "date": "11/15/2015",
-    "purchase-type": "replenishable",
-    "review": "",
-    "rough-amount": "$5.61",
-    "title": "Micro Tape"
-  },
-  {
-    "amazon": "",
-    "date": "11/14/2015",
-    "purchase-type": "replenishable",
-    "review": "",
-    "rough-amount": "$7.59",
-    "title": "Mascara Wands (100)"
-  },
-  {
-    "amazon": "",
-    "date": "11/14/2015",
-    "purchase-type": "replenishable",
-    "review": "",
-    "rough-amount": "$6.99",
-    "title": "Mascara Tubes(25)"
-  },
-  {
-    "amazon": "",
-    "date": "11/14/2015",
-    "purchase-type": "replenishable",
-    "review": "",
-    "rough-amount": "$54.95",
-    "title": "Glue"
-  },
-  {
-    "amazon": "",
-    "date": "11/28/2015",
-    "purchase-type": "replenishable",
-    "review": "",
-    "rough-amount": "$6.50",
-    "title": "extension ring"
-  },
-  {
-    "amazon": "",
-    "date": "11/28/2015",
-    "purchase-type": "replenishable",
-    "review": "",
-    "rough-amount": "$3.28",
-    "title": "Glue ring"
-  },
-  {
-    "amazon": "",
-    "date": "12/15/2015",
-    "purchase-type": "replenishable",
-    "review": "",
-    "rough-amount": "$16.59",
-    "title": "Barbacide Wipes 160"
-  },
-  {
-    "amazon": "-",
-    "date": "",
-    "purchase-type": "replenishable",
-    "review": "",
-    "rough-amount": "$10.17",
-    "title": "Purell 8oz 2pack"
   }
 ]

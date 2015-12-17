@@ -1,31 +1,13 @@
 {
   "regions": [
-    "Whidbey Island",
-    "Snohomish",
     "Eastside",
-    "North Seattle",
-    "Seattle",
-    "South Seattle",
-    "Vashon Island"
+    "Seattle"
   ],
   "cities": [
-    "Everett",
-    "Lynwood",
-    "Bothell",
-    "Mukilteo",
     "Woodinville",
     "Kirkland",
+    "Bothell",
     "Redmond",
-    "Bellevue",
-    "Issaquah",
-    "Edmonds",
-    "Shoreline",
-    "Northgate",
-    "Kenmore/Lakecity",
-    "Burien",
-    "West Seattle",
-    "Renton",
-    "White Center",
-    "Raineir Valley"
+    "Bellevue"
   ]
 }
