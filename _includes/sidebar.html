@@ -12,7 +12,8 @@
 
     <nav class="sidebar-nav">
       {% if site.phone != nil %}<a class="sidebar-nav-item" href="tel:{{ site.phone }}">{{site.phone}}</a>{% endif %}
-      <!-- {% for button in site.landing %}<a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ button.url  }}">{{ button.title }}</a>{% endfor %} -->
+      {% for button in site.landing %}<a class="sidebar-nav-item{% if page.url == button.url %} active{% endif %}" href="{{ button.url  }}">{{ button.name }}</a>{% endfor %}
+      {% for post in site.posts limit:1 %}<a class="sidebar-nav-item{% if page.url == post.url %} active{% endif %}" href="/blog">Blog</a>{% endfor %}
       {% if site.instagram != nil %}<a class="sidebar-nav-item" href="https://www.instagram.com/{{ site.instagram }}">Instagram</a>{% endif %}
       {% if site.facebook != nil %}<a class="sidebar-nav-item" href="https://www.facebook.com/{{ site.facebook }}">Facebook</a>{% endif %}
       {% if site.twitter != nil %}<a class="sidebar-nav-item" href="https://www.twitter.com/{{ site.twitter }}">Twitter</a>{% endif %}
