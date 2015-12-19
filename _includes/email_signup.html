@@ -1,0 +1,22 @@
+<div class="email-signup">
+  <form
+    style="text-align:center;"
+    action="https://feedburner.google.com/fb/a/mailverify"
+    method="post"
+    target="popupwindow"
+    onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri={{site.feedburner}}', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
+    <input
+      type="email"
+      placeholder="Email"
+      name="email"/>
+    <input type="hidden" value="{{site.feedburner}}" name="uri"/>
+    <input type="hidden" name="loc" value="en_US"/>
+    <input type="submit" value="Subscribe for Availability" />
+  </form>
+</div>
+<style type="text/css">
+  {% capture include_to_scssify %}
+    {% include email_signup.scss %}
+  {% endcapture %}
+  {{ include_to_scssify | scssify }}
+</style>
