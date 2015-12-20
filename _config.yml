@@ -19,6 +19,8 @@ description: > #
   Mobile Lash Extensions
 url: 'http://focusbeauty.github.io' # the base hostname & protocol for your site
 google_analytics: 'UA-61052500-8'
+# feedburner: "github/sqsu"
+tinyletter: "focusbeauty"
 # twitter: focusbeauty
 # instagram: focusbeauty
 # facebook: focusbeauty

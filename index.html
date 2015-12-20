@@ -26,6 +26,8 @@ layout: null
       <div class="content">
         <h1 class="page-title">{{site.title}}</h1>
         <h2 class="page-subtitle">{{site.subtitle}}</h2>
+        <h3><a style="color: white;" href="tel:{{ site.phone }}">{{ site.phone }}</a></h3>
+
 
         <div class="hidden-xs-down">
           <div class="actions" style="width: {{ site.landing.size | times: 150 | plus: 100 }}px">
@@ -35,6 +37,8 @@ layout: null
           </div>
         </div>
 
+
+
         <div class="hidden-sm-up">
           <div class="actions" style="width: 80%">
             <div class="btn-block btn-group-vertical" role="group" aria-label="menu">
@@ -43,9 +47,8 @@ layout: null
           </div>
         </div>
 
-        <div class="actions">
-          <h3><a style="color: white;" href="tel:{{ site.phone }}">{{ site.phone }}</a></h3>
-        </div>
+        {% include email_signup.html %}
+
         <span class="caption">Photo Credit: Andrea Ware</span>
       </div>
     </div>

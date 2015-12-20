@@ -1,3 +1,4 @@
+{% if site.feedburner %}
 <div class="email-signup">
   <form
     style="text-align:center;"
@@ -5,15 +6,29 @@
     method="post"
     target="popupwindow"
     onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri={{site.feedburner}}', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
-    <input
-      type="email"
-      placeholder="Email"
-      name="email"/>
+    <input type="email" placeholder="Enter your email" name="email"/>
     <input type="hidden" value="{{site.feedburner}}" name="uri"/>
     <input type="hidden" name="loc" value="en_US"/>
-    <input type="submit" value="Subscribe for Availability" />
+    <input type="submit" value="Subscribe" />
   </form>
 </div>
+{% endif %}
+
+{% if site.tinyletter %}
+<div class="email-signup">
+  <form
+    style="text-align:center;"
+    action="https://tinyletter.com/focusbeauty"
+    method="post"
+    target="popupwindow"
+    onsubmit="window.open('https://tinyletter.com/focusbeauty', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true">
+    <input type="email" name="email" id="tlemail" placeholder="Enter your email" />
+    <input type="hidden" value="1" name="embed"/>
+    <input type="submit" value="Subscribe" />
+  </form>
+</div>
+{% endif %}
+
 <style type="text/css">
   {% capture include_to_scssify %}
     {% include email_signup.scss %}
