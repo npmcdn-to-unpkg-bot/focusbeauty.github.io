@@ -1,16 +1,32 @@
 @import "bootstrap4/variables";
 @import "bootstrap4/mixins";
-// $btn-primary-bg: #605C50;
-// $btn-primary-border: lighten($btn-primary-bg, 15%);
+$btn-primary-bg: #605C50;
+$btn-primary-border: lighten($btn-primary-bg, 15%);
+$font-size-base: 20px;
 
-.image {
-  float: left;
+.image, .details {
   width: 50%;
 }
+
+.even {
+  .image { float: right}
+  .details { float: left}
+}
+
+.odd {
+  .image { float: left}
+  .details { float: right}
+}
+
 .details {
-  float: left;
-  width: 50%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 200px;
 }
+
+
 .clear {
   content: " ";
   display: table;
