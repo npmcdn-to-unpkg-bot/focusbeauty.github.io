@@ -1,12 +1,10 @@
 <div class="sidebar background-black">
   <div class="container sidebar-sticky">
     <div class="sidebar-about">
-      <h1>
-        <a href="/">{{ site.title }}</a>
-      </h1>
-      {% assign regions = site.data.locations['regions'] %}
+      <h1><a href="/">{{ site.title }}</a></h1>
       <p class="lead">{{ site.subtitle }}</p>
-      <p>Serving {{ regions | join: ', ' }}.</p>
+      {% assign cities = site.data.locations['cities'] %}
+      <p>Serving {{ cities | join: ', ' }}.</p>
 
     </div>
 

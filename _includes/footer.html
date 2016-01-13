@@ -3,8 +3,8 @@
     <nav class="footer-nav">
 
       {% assign cities = site.data.locations['cities'] %}
-      <small>Serving {{ cities | join: ', ' }}.</small>
-      {% if site.phone != nil %}<a class="footer-nav-item" href="tel:{{ site.phone }}">{{site.phone}}</a>{% endif %}
+      <p><small>Serving {{ cities | join: ', ' }}.</small></p>
+      {% if site.phone != nil %}<p><a class="footer-nav-item" href="tel:{{ site.phone }}">{{site.phone}}</a></p>{% endif %}
 
       <p>
         {% for feature in site.features %}
@@ -14,7 +14,7 @@
         {% endfor %}
       </p>
 
-      <p><a href="/">{{site.title}} {{ site.tagline }}</a></p>
+      <p><a href="/lashes/services/">{{site.title}} {{ site.tagline }}</a></p>
     </nav>
   </div>
 </div>
