@@ -30,7 +30,6 @@ module Enumerable
   end
 end
 
-
 desc "fetch locations"
 task :locations do
   Net::HTTP.start("gridspree.io") do |http|

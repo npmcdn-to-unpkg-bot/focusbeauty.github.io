@@ -45,7 +45,6 @@ html {
   }
 }
 
-
 .background-black {
   color: rgba(255,255,255,.5);
   background-color: #202020;
@@ -59,6 +58,12 @@ html {
   text-align: center;
   padding-top: 3rem;
   padding-bottom: 1rem;
+}
+
+@media (min-width: 48em) {
+  .footer {
+    display: none;
+  }
 }
 
 .footer-sticky {

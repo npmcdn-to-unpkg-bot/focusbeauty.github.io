@@ -1,13 +1,5 @@
 {
-  "regions": [
-    "Eastside",
-    "Seattle"
-  ],
   "cities": [
-    "Woodinville",
-    "Kirkland",
-    "Bothell",
-    "Redmond",
     "Bellevue"
   ]
 }
