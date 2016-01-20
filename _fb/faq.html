@@ -1,0 +1,19 @@
+---
+layout: default
+name: 'FAQ'
+title: 'Eyelash Extension FAQ'
+---
+
+<h1>Eyelash Extension FAQ</h1>
+
+
+<div class="message">
+  Your frequently asked questions, answered by <a href="/fb/about/">Andrea</a> of Focus Beauty
+</div>
+
+<dl>
+{% for item in site.data.faq %}
+<dt><strong>{{ item["question"] }}</strong></dt>
+<dd>{{ item["answer"] }}</dd>
+{% endfor %}
+</dl>

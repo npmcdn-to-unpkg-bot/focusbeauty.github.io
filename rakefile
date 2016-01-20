@@ -1,6 +1,10 @@
 require 'rake'
 require 'net/http'
+require "net/https"
+require "uri"
 require 'json'
+require 'csv'
+
 
 def write_data_to_file(name, data)
   filename = "_data/#{name}.json"
@@ -55,6 +59,20 @@ task :lashkit do
 
     write_data_to_file('lashkit', data.compact)
   end
+end
+
+desc "download faq"
+task :faq do
+  url = "https://docs.google.com/spreadsheets/d/1180v27GWAkGUpixhFBgQ-UFygDJQs-V0J_6AqsW3f3A/pub?gid=0&single=true&output=csv"
+  uri               = URI.parse(url)
+  http              = Net::HTTP.new(uri.host, uri.port)
+  http.use_ssl      = true
+  http.verify_mode  = OpenSSL::SSL::VERIFY_NONE
+  request           = Net::HTTP::Get.new(uri.request_uri)
+  response          = http.request(request)
+  csv               = CSV.new(response.body, {:headers => true, :header_converters => :symbol, :converters => :all})
+  data              = csv.to_a.map {|row| row.to_hash }
+  write_data_to_file('faq', data)
 end
 
 desc "fetch prices"

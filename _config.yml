@@ -1,26 +1,15 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'jekyll serve'. If you change this file, please restart the server process.
-#
-# sites we inspire to be
-# https://github.com/mmistakes/hpstr-jekyll-theme
-# http://hyde.getpoole.com/
-
 # Site settings
 title: 'Focus Beauty'
-subtitle: 'Lash Extensions'
-tagline: 'Bellevue Eyelash Extensions'
-phone: '323.903.7169'
-email: 'focusbeauty@gmail.com'
+subtitle: 'Mobile Lash Extensions'
+tagline: 'Seattle / Bellevue Mobile Eyelash Extensions'
+phone: '206.659.8844'
+email: 'getfocusbeauty@gmail.com'
 description: > #
   Bellevue Eyelash Extensions by Andrea Ware.
   Helping high-end clients throughout Seattle and the Eastside feel beautiful with
   permanent eyelash extension services.
   Andrea Ware is a licensed esthetician.
-url: 'http://focusbeauty.github.io' # the base hostname & protocol for your site
+url: 'http://www.getfocusbeauty.com' # the base hostname & protocol for your site
 google_analytics: 'UA-61052500-8'
 # feedburner: "github/sqsu"
 tinyletter: "focusbeauty"
@@ -28,6 +17,8 @@ tinyletter: "focusbeauty"
 # instagram: focusbeauty
 # facebook: focusbeauty
 # github:  focusbeauty
+
+exclude: [blog]
 
 prose:
   siteurl: 'http://focusbeauty.github.io'
@@ -43,6 +34,9 @@ collections:
   landing:
     output: true
     permalink: /lashes/:path/
+  fb:
+    output: true
+    permalink: /fb/:path/
   features:
     output: true
     permalink: /features/:path/
