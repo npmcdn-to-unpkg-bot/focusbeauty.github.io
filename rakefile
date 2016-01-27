@@ -106,7 +106,7 @@ end
 desc "copy images from dropbox"
 task :images do
   require 'fileutils'
-  target = '/Users/blairanderson/Dropbox/focus_beauty'
+  target = '/Users/blairanderson/Dropbox/focus_beauty/portfolio'
   dest = './assets/portfolio'
   FileUtils.rm_rf(Dir.glob(dest))
   FileUtils.mkdir_p(dest)
