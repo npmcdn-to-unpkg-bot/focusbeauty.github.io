@@ -12,9 +12,12 @@
       {% if site.phone != nil %}<a class="sidebar-nav-item" href="tel:{{ site.phone }}">{{site.phone}}</a>{% endif %}
       {% for button in site.landing %}<a class="sidebar-nav-item{% if page.url == button.url %} active{% endif %}" href="{{ button.url  }}">{{ button.name }}</a>{% endfor %}
       {% for post in site.fb %}<a class="sidebar-nav-item{% if page.url == post.url %} active{% endif %}" href="{{ post.url }}">{{ post.title }}</a>{% endfor %}
-      {% if site.instagram != nil %}<a class="sidebar-nav-item" href="https://www.instagram.com/{{ site.instagram }}" target="_blank">Instagram</a>{% endif %}
-      {% if site.facebook != nil %}<a class="sidebar-nav-item" href="https://www.facebook.com/{{ site.facebook }}" target="_blank">Facebook</a>{% endif %}
-      {% if site.twitter != nil %}<a class="sidebar-nav-item" href="https://www.twitter.com/{{ site.twitter }}" target="_blank">Twitter</a>{% endif %}
     </nav>
+    <hr/>
+    <div class="sidebar-inline">
+      {% if site.facebook != nil %}<a class="sidebar-nav-inline-item" href="https://www.facebook.com/{{ site.facebook }}" target="_blank">Facebook</a>{% endif %}
+      {% if site.instagram != nil %}<a class="sidebar-nav-inline-item" href="https://www.instagram.com/{{ site.instagram }}" target="_blank">Instagram</a>{% endif %}
+      {% if site.twitter != nil %}<a class="sidebar-nav-inline-item" href="https://www.twitter.com/{{ site.twitter }}" target="_blank">Twitter</a>{% endif %}
+    </div>
   </div>
 </div>

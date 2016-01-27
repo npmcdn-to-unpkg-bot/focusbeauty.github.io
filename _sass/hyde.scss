@@ -114,11 +114,26 @@ html {
   font-size: 2.4rem;
 }
 
+.sidebar-inline {
+  padding: 0;
+  font-size: 0;
+  text-align: justify;
+  &:after {// justify inline-block method:  http://tympanus.net/codrops/2013/07/14/justified-and-vertically-centered-header-elements/
+    content: '';
+    display: inline-block;
+    width: 100%;
+  }
+}
+.sidebar-nav-inline-item {
+  font-size: 15px;
+  display: inline-block;
+}
+
+
 /* Sidebar nav */
 .sidebar-nav {
   margin-bottom: 0rem;
 }
-
 
 .sidebar-nav-item {
   display: block;
