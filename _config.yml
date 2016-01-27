@@ -14,12 +14,12 @@ asset_cdn: 'https://cdn.rawgit.com/focusbeauty/focusbeauty.github.io/master'
 google_analytics: 'UA-61052500-8'
 # feedburner: "github/sqsu"
 tinyletter: "focusbeauty"
-# twitter: focusbeauty
-# instagram: focusbeauty
-# facebook: focusbeauty
-# github:  focusbeauty
+twitter: getfocusbeauty
+instagram: getfocusbeauty
+facebook: getfocusbeauty
+github:  focusbeauty
 
-exclude: [blog]
+exclude: [blog, node_modules, webpack.config.js]
 
 prose:
   siteurl: 'http://focusbeauty.github.io'
