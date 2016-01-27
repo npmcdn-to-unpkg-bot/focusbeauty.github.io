@@ -61,45 +61,59 @@ task :lashkit do
   end
 end
 
-desc "download faq"
-task :faq do
-  url = "https://docs.google.com/spreadsheets/d/1180v27GWAkGUpixhFBgQ-UFygDJQs-V0J_6AqsW3f3A/pub?gid=0&single=true&output=csv"
-  uri               = URI.parse(url)
+def fetch_table(table={})
+  uri               = URI.parse(table['url'])
   http              = Net::HTTP.new(uri.host, uri.port)
   http.use_ssl      = true
   http.verify_mode  = OpenSSL::SSL::VERIFY_NONE
-  request           = Net::HTTP::Get.new(uri.request_uri)
-  response          = http.request(request)
-  csv               = CSV.new(response.body, {:headers => true, :header_converters => :symbol, :converters => :all})
+  response          =  http.request(Net::HTTP::Get.new(uri.request_uri))
+  return CSV.new(response.body, {:headers => true, :header_converters => :symbol, :converters => :all})
+end
+
+desc "download faq"
+task :faq do
+  url               = "https://docs.google.com/spreadsheets/d/1180v27GWAkGUpixhFBgQ-UFygDJQs-V0J_6AqsW3f3A/pub?gid=0&single=true&output=csv"
+  csv               = fetch_table({"url" => url})
   data              = csv.to_a.map {|row| row.to_hash }
   write_data_to_file('faq', data)
 end
 
-desc "fetch prices"
-task :services do
-  services = []
-  Net::HTTP.start("gridspree.io") do |http|
-    resp = http.get("ss/3NSTm6bvRoHS4k76ZXqWv")
-    data_hash = JSON.parse(resp.body)
+desc "download prices from google"
+task :prices do
+  url               = "https://docs.google.com/spreadsheets/d/1Hw_B9hBrMnCJq4HUF3pfi_nlu_B4g9Uo5jmPIPBUdbs/pub?gid=0&single=true&output=csv"
+  csv               = fetch_table({"url" => url})
+  data_hash         = csv.to_a.map {|row| row.to_hash }
+  grouped = data_hash.group_by { |row| row[:table] }
+  data = []
+  grouped.each do |table_sym, rows|
+    table = {}
 
-    grouped = data_hash["rows"].group_by { |row| row["table"] }.values
-    data = []
-    grouped = grouped.map do |rows|
-      table = {}
-
-      rows.each_with_index do |row, index|
-        if index == 0
-          table["title"] = row["title"]
-        else
-          table["data"] ||= []
-          table["data"] << row.except("table")
-        end
+    rows.each_with_index do |row, index|
+      if index == 0
+        table['title'] = row[:title]
+      else
+        table["data"] ||= []
+        table["data"] << row.except(:table)
       end
-
-      data << table
     end
 
-    write_data_to_file("services", data)
+    data << table
   end
 
+  write_data_to_file('services', data)
+end
+
+desc "copy images from dropbox"
+task :images do
+  require 'fileutils'
+  target = '/Users/blairanderson/Dropbox/focus_beauty'
+  dest = './assets/portfolio'
+  FileUtils.rm_rf(Dir.glob(dest))
+  FileUtils.mkdir_p(dest)
+  Dir.glob("#{target}/*.{jpg,jpeg,png}").each do |file|
+    dir, filename = File.dirname(file), File.basename(file)
+    file_dest = File.join(dest,filename)
+    puts "copying #{file_dest}"
+    FileUtils.copy_file(file, file_dest)
+  end
 end
