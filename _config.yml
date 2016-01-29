@@ -17,6 +17,7 @@ tinyletter: "focusbeauty"
 twitter: getfocusbeauty
 instagram: getfocusbeauty
 facebook: getfocusbeauty
+pinterest: getfocusbeauty
 github:  focusbeauty
 
 exclude: [blog, node_modules, webpack.config.js]
