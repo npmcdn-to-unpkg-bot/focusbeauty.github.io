@@ -1,4 +1,16 @@
-window._lload("https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js", jqueryLoaded)
+tryAgain()
+
+function tryAgain(){
+  if (window._lload) {
+    start()
+  } else {
+    setTimeout(tryAgain, 10)
+  }
+}
+
+function start(){
+  window._lload("https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js", jqueryLoaded)
+}
 
 function jqueryLoaded(){
   window._lload("https://cdn.rawgit.com/desandro/masonry/22e9953eaa0726f9ee019937be448d33d80ff92b/dist/masonry.pkgd.min.js", masonryLoaded)

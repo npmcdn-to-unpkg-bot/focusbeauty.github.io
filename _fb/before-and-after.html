@@ -3,18 +3,18 @@ layout: default
 name: 'before-and-after'
 title: 'Before and After'
 ---
-<style type="text/css">
-  {% capture include_to_scssify %}
-    {% include portfolio.scss %}
-  {% endcapture %}
-  {{ include_to_scssify | scssify }}
-</style>
-
 <h1>Before and After</h1>
 
 <div class="message">
   Some photos from our favorite clients!
 </div>
+
+<style type="text/css">
+{% capture include_to_scssify %}
+{% include portfolio.scss %}
+{% endcapture %}
+{{ include_to_scssify | scssify }}
+</style>
 
 <!-- http://blog.teamtreehouse.com/learn-asynchronous-image-loading-javascript -->
 <div id="photo-container"></div>
@@ -23,5 +23,5 @@ title: 'Before and After'
     {% for bg in site.static_files %}{% if bg.path contains 'assets/portfolio' %}'{{ bg.path }}?{{bg.modified_time | date: "%Y-%m-%d-%H-%M-%S"}}',{% endif %}{% endfor %}
   ];
 </script>
-<script src="https://cdn.rawgit.com/walmartlabs/little-loader/master/lib/little-loader.js"></script>
+<script async src="https://cdn.rawgit.com/walmartlabs/little-loader/master/lib/little-loader.js"></script>
 <script async src="{{ '/portfolio.js' | prepend: site.baseurl }}"></script>
