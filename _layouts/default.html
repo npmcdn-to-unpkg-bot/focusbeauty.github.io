@@ -14,12 +14,6 @@
 
     {% include footer.html %}
 
-    <style type="text/css">
-      {% capture include_to_scssify %}
-        {% include site.scss %}
-      {% endcapture %}
-      {{ include_to_scssify | scssify }}
-    </style>
   </body>
   {% include google_analytics.html %}
 </html>
