@@ -1,20 +1,21 @@
-<div class="footer background-black text-color-white">
+<div class="footer hide-desktop background-black text-color-white">
   <div class="footer-sticky">
     <nav class="footer-nav">
-
+      {% include social.html %}
       {% assign cities = site.data.locations['cities'] %}
-      <p><small>Serving {{ cities | join: ', ' }}.</small></p>
+      <p><a href="/lashes/booking/">Serving {{ cities | join: ', ' }}.</a></p>
+
       {% if site.phone != nil %}<p><a class="footer-nav-item" href="tel:{{ site.phone }}">{{site.phone}}</a></p>{% endif %}
 
-      <p>
+      <ul style='list-style-type:none; padding: 0;'>
+        {% for post in site.landing %} <li><h2><a class="btn btn-link" href="{{ post.url  }}">{{ post.name }}</a></h2></li>{% endfor %}
+        {% for post in site.fb %}<li><h2><a class="btn btn-link{% if page.url == post.url %} active{% endif %}" href="{{ post.url }}">{{ post.title }}</a></h2></li>{% endfor %}
         {% for feature in site.features %}
-          {% if feature.published == true %}
-            <a class="btn btn-link" href="{{ feature.url  }}">{{ feature.title }}</a>
-          {% endif %}
+          {% if feature.published == true %}<li><h2><a class="btn btn-link" href="{{ feature.url  }}">{{ feature.title }}</a></h2></li>{% endif %}
         {% endfor %}
-      </p>
+      </ul>
 
-      <p><a href="/lashes/services/">{{site.title}} {{ site.tagline }}</a></p>
+      <h3><a href="/lashes/services/">{{site.title}} {{ site.tagline }}</a></h3>
     </nav>
   </div>
 </div>

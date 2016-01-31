@@ -61,7 +61,13 @@ html {
 }
 
 @media (min-width: 48em) {
-  .footer {
+  .hide-desktop {
+    display: none;
+  }
+}
+
+@media (max-width: 47em) {
+  .hide-mobile {
     display: none;
   }
 }
