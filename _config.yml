@@ -2,6 +2,7 @@
 title: 'Focus Beauty'
 subtitle: 'Mobile Lash Extensions'
 tagline: 'Seattle / Bellevue Mobile Eyelash Extensions'
+
 # phone: '206.659.8844'
 email: 'getfocusbeauty@gmail.com'
 description: > #
@@ -20,7 +21,7 @@ facebook: getfocusbeauty
 pinterest: getfocusbeauty
 github:  focusbeauty
 
-exclude: [blog, node_modules, webpack.config.js]
+exclude: [node_modules, webpack.config.js]
 
 prose:
   siteurl: 'http://focusbeauty.github.io'

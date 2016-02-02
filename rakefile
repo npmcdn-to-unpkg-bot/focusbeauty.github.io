@@ -5,7 +5,9 @@ require "uri"
 require 'json'
 require 'csv'
 
-
+#
+# HELPERS
+#
 def write_data_to_file(name, data)
   filename = "_data/#{name}.json"
   open(filename, "w") { |file| file.write(JSON.pretty_generate(data)) }

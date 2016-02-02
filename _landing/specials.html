@@ -1,0 +1,29 @@
+---
+layout: default
+title: 'Specials and Packages'
+name: 'Specials and Packages'
+---
+
+<h1>
+  Specials and Packages
+  {% include book_now.html %}
+</h1>
+
+<div class="message">
+  *Special and Packages are only Available at the Bellevue location.*
+</div>
+{% for service in site.data.specials %}
+<table>
+  <colgroup><col span="1" style="width: 70%;"><col span="1" style="width: 30%;"></colgroup>
+  <tbody>
+    <tr><td><strong>{{ service["title"] }}</strong></td><td>Price</td></tr>
+  </tbody>
+  <tfoot>
+  {% for price in service["data"] %}
+  <tr>
+    <td>{{price["title"]}}</td>
+    <td>{{price["value"]}}</td>
+  </tr>{% endfor %}
+  </tfoot>
+</table>
+{% endfor %}
