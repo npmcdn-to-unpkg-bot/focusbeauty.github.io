@@ -14,9 +14,15 @@ name: 'Specials and Packages'
 </div>
 {% for service in site.data.specials %}
 <table>
-  <colgroup><col span="1" style="width: 70%;"><col span="1" style="width: 30%;"></colgroup>
+  <colgroup>
+    <col span="1" style="width: 70%;">
+    <col span="1" style="width: 30%;">
+  </colgroup>
   <tbody>
-    <tr><td><strong>{{ service["title"] }}</strong></td><td>Price</td></tr>
+    <tr>
+      <td><strong>{{ service["title"] }}</strong></td>
+      <td>Price</td>
+    </tr>
   </tbody>
   <tfoot>
   {% for price in service["data"] %}
