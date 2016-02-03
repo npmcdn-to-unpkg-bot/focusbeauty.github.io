@@ -20,7 +20,7 @@ title: 'Before and After'
 <div id="photo-container"></div>
 <script type="text/javascript">
   window.imageArray = [
-    {% for bg in site.static_files %}{% if bg.path contains 'assets/portfolio' %}'{{ bg.path }}?{{bg.modified_time | date: "%Y-%m-%d-%H-%M-%S"}}',{% endif %}{% endfor %}
+    {% for bg in site.static_files %}{% if bg.path contains 'assets/portfolio' %}'{{ bg.path }}',{% endif %}{% endfor %}
   ];
 </script>
 <script async src="https://cdn.rawgit.com/walmartlabs/little-loader/master/lib/little-loader.js"></script>
