@@ -108,14 +108,17 @@ end
 desc "copy images from dropbox"
 task :images do
   require 'fileutils'
-  target = '/Users/blairanderson/Dropbox/focus_beauty/portfolio'
-  dest = './assets/portfolio'
-  FileUtils.rm_rf(Dir.glob(dest))
-  FileUtils.mkdir_p(dest)
-  Dir.glob("#{target}/*.{jpg,jpeg,png}").each do |file|
-    dir, filename = File.dirname(file), File.basename(file)
-    file_dest = File.join(dest,filename)
-    puts "copying #{file_dest}"
-    FileUtils.copy_file(file, file_dest)
+  ['portfolio', 'background'].each do |target|
+    path = "/Users/blairanderson/Dropbox/focus_beauty/#{target}"
+    dest = "./assets/#{target}"
+    FileUtils.rm_rf(Dir.glob(dest))
+    FileUtils.mkdir_p(dest)
+    Dir.glob("#{path}/*.{jpg,jpeg,png}").each do |file|
+      dir, filename = File.dirname(file), File.basename(file)
+      file_dest = File.join(dest,filename)
+      puts "copying #{file_dest}"
+      FileUtils.copy_file(file, file_dest)
+    end
   end
+
 end
