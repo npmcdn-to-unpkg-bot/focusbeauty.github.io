@@ -1,0 +1,27 @@
+<div class="sidebar background-black">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1><a href="/">{{ site.title }}</a></h1>
+      <p class="lead">{{ site.subtitle }}</p>
+      {% assign cities = site.data.locations['cities'] %}
+      <p>Serving {{ cities | join: ', ' }}.</p>
+
+    </div>
+
+    <nav class="sidebar-nav">
+      {% if site.phone != nil %}<p><a class="footer-nav-item" href="tel:{{ site.phone }}">{{site.phone}}</a></p>{% endif %}
+      {% for button in site.landing %}<a class="sidebar-nav-item{% if page.url == button.url %} active{% endif %}" href="{{ button.url  }}">{{ button.name }}</a>{% endfor %}
+    </nav>
+    <nav class="sidebar-nav hide-mobile">
+      {% for post in site.fb %}<a class="sidebar-nav-item{% if page.url == post.url %} active{% endif %}" href="{{ post.url }}">{{ post.title }}</a>{% endfor %}
+      {% for feature in site.features %}
+        {% if feature.published == true %}<a class="sidebar-nav-item{% if page.url == feature.url %} active{% endif %}" href="{{ feature.url  }}">{{ feature.title }}</a>{% endif %}
+      {% endfor %}
+    </nav>
+
+    <div class="hide-mobile">
+      <hr/>
+      {% include social.html %}
+    </div>
+  </div>
+</div>

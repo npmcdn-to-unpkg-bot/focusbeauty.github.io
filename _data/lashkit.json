@@ -1,0 +1,57 @@
+[
+  {
+    "amazon": "http://smile.amazon.com/gp/product/B000MI85FC?psc=1&redirect=true&ref_=oh_aui_detailpage_o07_s00",
+    "date": "11/20/2015",
+    "purchase-type": "one-time",
+    "qty purchased": 1,
+    "review": "",
+    "rough-amount": "$7.42",
+    "title": "Alcohol Dispenser",
+    "totals": "$7.42",
+    "asin": "B000MI85FC"
+  },
+  {
+    "amazon": "http://smile.amazon.com/gp/product/B00GMEXM9Y?psc=1&redirect=true&ref_=oh_aui_detailpage_o07_s00",
+    "date": "11/20/2015",
+    "purchase-type": "one-time",
+    "qty purchased": 1,
+    "review": "",
+    "rough-amount": "$18.49",
+    "title": "Nebulizer",
+    "totals": "$18.49",
+    "asin": "B00GMEXM9Y"
+  },
+  {
+    "amazon": "http://smile.amazon.com/gp/product/B00XWAAFHI?psc=1&redirect=true&ref_=oh_aui_detailpage_o07_s02",
+    "date": "11/23/2015",
+    "purchase-type": "one-time",
+    "qty purchased": 1,
+    "review": "",
+    "rough-amount": "$35.97",
+    "title": "Mirror",
+    "totals": "$35.97",
+    "asin": "B00XWAAFHI"
+  },
+  {
+    "amazon": "http://smile.amazon.com/gp/product/B00MEW8G12?psc=1&redirect=true&ref_=oh_aui_detailpage_o01_s00",
+    "date": "12/21/2015",
+    "purchase-type": "one-time",
+    "qty purchased": 1,
+    "review": "",
+    "rough-amount": "$32.92",
+    "title": "Chair",
+    "totals": "$32.92",
+    "asin": "B00MEW8G12"
+  },
+  {
+    "amazon": "http://smile.amazon.com/gp/product/B00U8GX44A?psc=1&redirect=true&ref_=oh_aui_detailpage_o07_s00",
+    "date": "11/23/2015",
+    "purchase-type": "one-time",
+    "qty purchased": 1,
+    "review": "",
+    "rough-amount": "$16.99",
+    "title": "Glue Remover",
+    "totals": "$16.99",
+    "asin": "B00U8GX44A"
+  }
+]

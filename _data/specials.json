@@ -1,0 +1,51 @@
+[
+  {
+    "title": "Packages",
+    "value": "5th fill is free",
+    "data": [
+      {
+        "title": "Classic Fill of 5",
+        "value": "$240.00"
+      },
+      {
+        "title": "Mink Fill of 5",
+        "value": "$280.00"
+      },
+      {
+        "title": "Volume Fill of 5",
+        "value": "$440.00"
+      }
+    ]
+  },
+  {
+    "title": "New Client Specials",
+    "value": "Discounted Price",
+    "data": [
+      {
+        "title": "First Classic Set",
+        "value": "$75.00"
+      },
+      {
+        "title": "First Mink Set",
+        "value": "$85.00"
+      },
+      {
+        "title": "First Volume Set",
+        "value": "$125.00"
+      },
+      {
+        "title": "Book your fill at time of full set service and get 20% off!",
+        "value": "$48.00"
+      }
+    ]
+  },
+  {
+    "title": "Referral",
+    "data": [
+      {
+        "title": "Refer a friend and get $10 off scheduled fill",
+        "value": "-$10.00"
+      }
+    ]
+  }
+]

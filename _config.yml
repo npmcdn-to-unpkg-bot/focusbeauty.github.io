@@ -1,0 +1,46 @@
+# Site settings
+title: 'Focus Beauty'
+subtitle: 'Your Lash Specialist'
+tagline: 'Seattle / Bellevue Mobile Eyelash Extensions'
+
+# phone: '206.659.8844'
+email: 'getfocusbeauty@gmail.com'
+metaimage: 'https://cdn.rawgit.com/focusbeauty/focusbeauty.github.io/master/assets/background/ice-landscape.png'
+description: > #
+  Bellevue Eyelash Extensions by Andrea Ware.
+  Helping high-end clients throughout Seattle and the Eastside feel beautiful with
+  permanent eyelash extension services.
+  Andrea Ware is a licensed esthetician.
+url: 'http://www.getfocusbeauty.com' # the base hostname & protocol for your site
+asset_cdn: 'https://cdn.rawgit.com/focusbeauty/focusbeauty.github.io/master'
+google_analytics: 'UA-61052500-8'
+# feedburner: "github/sqsu"
+tinyletter: "focusbeauty"
+twitter: getfocusbeauty
+instagram: getfocusbeauty
+facebook: getfocusbeauty
+pinterest: getfocusbeauty
+github:  focusbeauty
+
+exclude: [node_modules, webpack.config.js]
+
+prose:
+  siteurl: 'http://focusbeauty.github.io'
+
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# Build settings
+markdown: kramdown
+
+collections:
+  landing:
+    output: true
+    permalink: /lashes/:path/
+  fb:
+    output: true
+    permalink: /fb/:path/
+  features:
+    output: true
+    permalink: /features/:path/

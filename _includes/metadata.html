@@ -1,0 +1,12 @@
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# business: http://ogp.me/ns/business#">
+<meta property="og:type"              content="business.business" />
+<meta property="og:url"               content="{{site.url}}" />
+<meta property="og:title"             content="{{site.title}}" />
+<meta property="og:image"             content="{{site.metaimage}}" />
+<meta name="twitter:card"             content="summary_large_image">
+<meta name="twitter:site"             content="@getfocusbeauty">
+<meta name="twitter:creator"          content="@dreware34">
+<meta name="twitter:title"            content="{% if page.title %} {{ page.title }} {% else %}{{ site.title }} {{ site.tagline }}{% endif %}">
+<meta name="description"              content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 | append: ".  "  }}{% endif %}{{ site.description }}">
+<meta name="twitter:description"      content="{{site.description}}">
+<meta name="twitter:image"            content="{{site.metaimage}}">

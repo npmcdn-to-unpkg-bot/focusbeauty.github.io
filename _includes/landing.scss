@@ -1,0 +1,110 @@
+@import "lato_font.scss";
+@import "custom_landing_bootstrap.scss";
+@import 'bootstrap4/mixins';
+@import 'bootstrap4/variables.scss';
+@import 'bootstrap4/utilities-responsive.scss';
+
+// Our variables
+$base-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$base-font-size:   16px;
+$base-font-weight: 400;
+$small-font-size:  $base-font-size * 0.875;
+$base-line-height: 1.5;
+
+$spacing-unit:     30px;
+
+$text-color:       #111;
+$background-color: #fdfdfd;
+$brand-color:      #2a7ae2;
+
+$grey-color:       #828282;
+$grey-color-light: lighten($grey-color, 40%);
+$grey-color-dark:  darken($grey-color, 25%);
+
+// Width of the content area
+$content-width:    800px;
+
+$on-palm:          600px;
+$on-laptop:        800px;
+
+@mixin media-query($device) {
+  @media screen and (max-width: $device) {
+    @content;
+  }
+}
+
+body {
+  opacity: 0;
+  transition: opacity .2s;
+  -webkit-transition: opacity .2s;
+}
+
+.content {
+  margin: auto;
+}
+
+h1, h2, h3, h4, h5 {
+  /*color: #797267;*/
+  color: white;
+  font-weight: bold;
+  font-style: normal;
+  font-family: 'Lato', sans-serif;
+  letter-spacing: .19em;
+  text-align: center;
+  text-transform: uppercase;
+  text-rendering: optimizeLegibility;
+}
+
+h1 {
+  font-size: 3em;
+  line-height: .9em;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+h3 {
+  font-size: 1em;
+}
+
+.actions {
+  margin: 50px auto;
+}
+
+.btn-transparent {
+  color: white;
+  background-color: transparent;
+  border: 1px solid;
+  border-color: white;
+  padding: 12px 24px;
+  font-size: 24px;
+  border-radius: 0px;
+}
+
+.btn-transparent:hover {
+  background-color: white;
+  border-color: white;
+  color: #333333;
+}
+
+* {
+  margin: 0; padding: 0;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  background-size: cover;
+  background-blend-mode: darken;
+  background: url('/') 50% 50% / cover no-repeat fixed;
+  background-color: rgba(0, 0, 0, 0.4) !important;
+}
+
+.caption {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  color: #DCDCDC;
+}

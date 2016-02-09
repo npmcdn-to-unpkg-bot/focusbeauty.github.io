@@ -1,0 +1,124 @@
+require 'rake'
+require 'net/http'
+require "net/https"
+require "uri"
+require 'json'
+require 'csv'
+
+#
+# HELPERS
+#
+def write_data_to_file(name, data)
+  filename = "_data/#{name}.json"
+  open(filename, "w") { |file| file.write(JSON.pretty_generate(data)) }
+  if data.instance_of?(Array)
+    datatype = 'Array'
+  else
+    datatype = data.keys.map(&:to_s).join(", ")
+  end
+  puts "writing #{datatype} to #{filename}"
+end
+
+class Hash
+  def except(*keys)
+    dup.except!(*keys)
+  end
+
+  def except!(*keys)
+    keys.each { |key| delete(key) }
+    self
+  end
+end
+
+module Enumerable
+  def pluck(key)
+    map {|obj| obj[key] }
+  end
+end
+
+desc "fetch locations"
+task :locations do
+  Net::HTTP.start("gridspree.io") do |http|
+    resp = http.get("/ss/xGmQC6u2zWpV7hWos38N9G")
+    data = JSON.parse(resp.body)["rows"]
+    regions = data.pluck('region').reject { |c| c.empty? }
+    cities = data.pluck('city').reject { |c| c.empty? }
+    write_data_to_file('locations', {regions: regions, cities: cities})
+  end
+end
+
+desc "create product for lash kit"
+task :lashkit do
+  Net::HTTP.start("gridspree.io") do |http|
+    resp = http.get("/ss/kMTtnkLcdPqBUu8oknDTSK")
+    data_hash = JSON.parse(resp.body)
+    data = data_hash["rows"].map do |p|
+      if p["amazon"] && match = p["amazon"].match("([A-Z0-9]{10})")
+        p["asin"] = match[0]
+        p
+      end
+    end
+
+    write_data_to_file('lashkit', data.compact)
+  end
+end
+
+def fetch_table(table={})
+  uri               = URI.parse(table['url'])
+  http              = Net::HTTP.new(uri.host, uri.port)
+  http.use_ssl      = true
+  http.verify_mode  = OpenSSL::SSL::VERIFY_NONE
+  response          =  http.request(Net::HTTP::Get.new(uri.request_uri))
+  return CSV.new(response.body, {:headers => true, :header_converters => :symbol, :converters => :all})
+end
+
+desc "download faq"
+task :faq do
+  url               = "https://docs.google.com/spreadsheets/d/1180v27GWAkGUpixhFBgQ-UFygDJQs-V0J_6AqsW3f3A/pub?gid=0&single=true&output=csv"
+  csv               = fetch_table({"url" => url})
+  data              = csv.to_a.map {|row| row.to_hash }
+  write_data_to_file('faq', data)
+end
+
+desc "download prices from google"
+task :prices do
+  url               = "https://docs.google.com/spreadsheets/d/1Hw_B9hBrMnCJq4HUF3pfi_nlu_B4g9Uo5jmPIPBUdbs/pub?gid=0&single=true&output=csv"
+  csv               = fetch_table({"url" => url})
+  data_hash         = csv.to_a.map {|row| row.to_hash }
+  grouped = data_hash.group_by { |row| row[:table] }
+  data = []
+  grouped.each do |table_sym, rows|
+    table = {}
+
+    rows.each_with_index do |row, index|
+      if index == 0
+        table['title'] = row[:title]
+      else
+        table["data"] ||= []
+        table["data"] << row.except(:table)
+      end
+    end
+
+    data << table
+  end
+
+  write_data_to_file('services', data)
+end
+
+desc "copy images from dropbox"
+task :images do
+  require 'fileutils'
+  ['portfolio', 'background'].each do |target|
+    path = "/Users/blairanderson/Dropbox/focus_beauty/#{target}"
+    dest = "./assets/#{target}"
+    FileUtils.rm_rf(Dir.glob(dest))
+    FileUtils.mkdir_p(dest)
+    Dir.glob("#{path}/*.{jpg,jpeg,png}").each do |file|
+      dir, filename = File.dirname(file), File.basename(file)
+      file_dest = File.join(dest,filename)
+      puts "copying #{file_dest}"
+      FileUtils.copy_file(file, file_dest)
+    end
+  end
+
+end
