@@ -10,6 +10,7 @@
 
     <nav class="sidebar-nav">
       {% if site.phone != nil %}<p><a class="footer-nav-item" href="tel:{{ site.phone }}">{{site.phone}}</a></p>{% endif %}
+      <a class="sidebar-nav-item" href="http://blog.getfocusbeauty.com" target="_blank">Focus Beauty Blog</a>
       {% for button in site.landing %}<a class="sidebar-nav-item{% if page.url == button.url %} active{% endif %}" href="{{ button.url  }}">{{ button.name }}</a>{% endfor %}
     </nav>
     <nav class="sidebar-nav hide-mobile">
