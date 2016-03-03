@@ -1,14 +1,14 @@
 # Site settings
 title: 'Focus Beauty'
 subtitle: 'Your Lash Specialist'
-tagline: 'Seattle / Bellevue Mobile Eyelash Extensions'
+tagline: 'Bellevue Mobile Eyelash Extensions'
 
 # phone: '206.659.8844'
 email: 'getfocusbeauty@gmail.com'
 metaimage: 'https://cdn.rawgit.com/focusbeauty/focusbeauty.github.io/master/assets/background/ice-landscape.png'
 description: > #
   Bellevue Eyelash Extensions by Andrea Ware.
-  Helping high-end clients throughout Seattle and the Eastside feel beautiful with
+  Helping high-end clients throughout the Eastside feel beautiful with
   permanent eyelash extension services.
   Andrea Ware is a licensed esthetician.
 url: 'http://www.getfocusbeauty.com' # the base hostname & protocol for your site
