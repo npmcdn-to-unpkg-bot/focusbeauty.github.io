@@ -36,7 +36,7 @@ function jqueryLoaded(){
 }
 
 function masonryLoaded(){
-  window._lload("https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js", done)
+  window._lload("https://unpkg.com/imagesloaded@4.1/imagesloaded.pkgd.min.js", done)
 }
 
 function done() {
